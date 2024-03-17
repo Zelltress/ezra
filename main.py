@@ -14,3 +14,11 @@ def deposit_sum(cash, percnt, time):
         cash += cash*(percnt/100)
     print('Сумма =', cash)
     print('Суммы в каждый месяц:', sum_of_priod)
+
+
+if depos_name == '11.5% на 24мес - Тинькофф':
+    deposit_sum(begin_sum, percent[0], period[0])
+elif depos_name == '13.5% на 12мес - Тинькофф':
+    deposit_sum(begin_sum, percent[1], period[1])
+elif depos_name == '14% на 12мес - Сбер':
+    deposit_sum(begin_sum, percent[2], period[2])
