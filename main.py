@@ -14,14 +14,23 @@ period = [3, 12, 24, 12, 6, 12, 24, 36, 12, 36]
 
 
 def check_exists_period(wnted_priod):
+    '''
+    This function checks whether it is possible to make a deposit according to the entered conditions
+    '''
     return wnted_priod != 0 and wnted_priod >= 1
 
 
 def check_exists_percent(wnted_percent):
+    '''
+    This function checks whether it is possible to make a deposit according to the entered conditions
+    '''
     return wnted_percent != 0
 
 
 def suitable_dpst():
+    '''
+
+    '''
     for i in range(0, 10):
         if period[i] == wnted_priod:
             NashP.append(i)
@@ -73,6 +82,12 @@ match depos_name:
 
 
 def deposit_sum(cash, percnt, time):
+    '''
+    :param cash:
+    :param percnt:
+    :param time:
+
+    '''
     for i in range(time):
         sum_of_priod.append(cash * (percnt / 100))
         cash += cash * (percnt / 100)
