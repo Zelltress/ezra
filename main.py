@@ -17,8 +17,6 @@ def deposit_sum(cash, percnt, time):
     print('Суммы в каждый месяц:', sum_of_priod)
 
 #допустим, что depos_name - подходящий нам вклад
-
-
 depos_name = 1
 
 match depos_name:
