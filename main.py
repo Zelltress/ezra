@@ -14,6 +14,7 @@ period = [3, 12, 24, 12, 6, 12, 24, 36, 12, 36]
 
 depos_name = 0
 
+
 def check_exists(wnted_prd, wnted_prcnt, begin_sum):
     '''
     This function checks whether it is possible to make a deposit according to the entered conditions
@@ -86,7 +87,6 @@ def main():
         deposit_sum(begin_sum, percent[depos_name], period[depos_name])
     else:
         print(ru.DISPARITY)
-
 
 
 if __name__ == '__main__':
