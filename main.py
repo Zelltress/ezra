@@ -1,8 +1,8 @@
 import ru_local as ru
 
-wnted_priod = int(input('Введите количество месяцев, на котоорые вы хотите взять вклад: '))
-wnted_percent = float(input('Введите желаемый процент: '))
-begin_sum = float(input('Введите начальную сумму вклада: '))
+wnted_priod = int(input(ru.CHOICE_PRD))
+wnted_percent = float(input(ru.CHOICE_PRCNT))
+begin_sum = float(input(ru.CHOICE_DPST))
 
 percent = [15, 13.5, 11.5, 14, 16, 14.09, 13.8, 16, 12.5, 11.5]
 period = [3, 12, 24, 12, 6, 12, 24, 36, 12, 36]
