@@ -4,26 +4,25 @@ wnted_priod = int(input(ru.CHOICE_PRD))
 wnted_percent = float(input(ru.CHOICE_PRCNT))
 begin_sum = float(input(ru.CHOICE_DPST))
 
-percent = [15, 13.5, 11.5, 14, 16, 14.09, 13.8, 16, 12.5, 11.5]
-period = [3, 12, 24, 12, 6, 12, 24, 36, 12, 36]
 
 sum_of_priod = []
 NashP = []
 Nash = []
 new = []
 
-
-def deposit_sum(cash, percnt, time):
-    for i in range(time):
-        sum_of_priod.append(cash * (percnt / 100))
-        cash += cash * (percnt / 100)
-    print('Сумма =', cash)
-    print('Суммы в каждый месяц:', sum_of_priod)
+percent = [15, 13.5, 11.5, 14, 16, 14.09, 13.8, 16, 12.5, 11.5]
+period = [3, 12, 24, 12, 6, 12, 24, 36, 12, 36]
 
 
-# допустим, что depos_name - подходящий нам вклад
+def check_exists_period(wnted_priod):
+    return wnted_priod != 0 and wnted_priod >= 1
 
-for i in range(0,10):
+
+def check_exists_percent(wnted_percent):
+    return wnted_percent != 0
+
+
+for i in range(0, 10):
     if period[i] == wnted_priod:
         NashP.append(i)
         print(i, NashP)
@@ -32,10 +31,10 @@ for k in NashP:
     print(percent[k])
     Nash.append(percent[k])
 
-
 for f in range(0, len(Nash)):
     if Nash[f] == wnted_percent:
         depos_name = f + 1
+
 
 
 match depos_name:
@@ -71,12 +70,12 @@ match depos_name:
         print(ru.LEVOBEREZHNY_36)
 
 
-def check_exists_period(wnted_priod):
-    return wnted_priod != 0 and wnted_priod >= 1
-
-
-def check_exists_percent(wnted_percent):
-    return wnted_percent != 0
+def deposit_sum(cash, percnt, time):
+    for i in range(time):
+        sum_of_priod.append(cash * (percnt / 100))
+        cash += cash * (percnt / 100)
+    print(ru.CASH, cash)
+    print(ru.SUMM_OF_PRD, sum_of_priod)
 
 
 
