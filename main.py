@@ -13,18 +13,11 @@ percent = [15, 13.5, 11.5, 14, 16, 14.09, 13.8, 16, 12.5, 11.5]
 period = [3, 12, 24, 12, 6, 12, 24, 36, 12, 36]
 
 
-def check_exists_period(wnted_prd):
+def check_exists(wnted_prd, wnted_prcnt):
     '''
     This function checks whether it is possible to make a deposit according to the entered conditions
     '''
-    return wnted_prd != 0 and wnted_prd >= 1
-
-
-def check_exists_percent(wnted_prcnt):
-    '''
-    This function checks whether it is possible to make a deposit according to the entered conditions
-    '''
-    return wnted_prcnt != 0
+    return wnted_prd != 0 and wnted_prd >= 1 and wnted_prcnt != 0
 
 
 def suitable_dpst():
@@ -85,7 +78,7 @@ def deposit_sum(cash, prcnt, time):
 
 
 def main():
-    if check_exists_period(wnted_prd) == True and check_exists_percent(wnted_prcnt) == True:
+    if check_exists(wnted_prd, wnted_prcnt):
         suitable_dpst()
         deposits_descr(depos_name)
         deposit_sum(cash, prcnt, time)
