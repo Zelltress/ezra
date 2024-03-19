@@ -5,8 +5,8 @@ wnted_prcnt = float(input(ru.CHOICE_PRCNT))
 begin_sum = float(input(ru.CHOICE_DPST))
 
 sum_of_prd = []
-nashP = []
-nash = []
+required_prd = []
+required_prcnt = []
 new = []
 
 percent = [15, 13.5, 11.5, 14, 16, 14.09, 13.8, 16, 12.5, 11.5]
@@ -28,15 +28,15 @@ def suitable_dpst(wnted_prd, wnted_prcnt, depos_name):
     '''
     for i in range(0, 10):
         if period[i] == wnted_prd:
-            nashP.append(i)
-            print(i, nashP)
+            required_prd .append(i)
+            print(i, required_prd)
 
-    for k in nashP:
+    for k in required_prd:
         print(percent[k])
-        nash.append(percent[k])
+        required_prcnt.append(percent[k])
 
-    for f in range(0, len(nash)):
-        if nash[f] == wnted_prcnt:
+    for f in range(0, len(required_prcnt)):
+        if required_prcnt[f] == wnted_prcnt:
             depos_name = f + 1
 
     return depos_name
