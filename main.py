@@ -31,6 +31,7 @@ def suitable_dpst():
     '''
 
     '''
+    global depos_name
     for i in range(0, 10):
         if period[i] == wnted_priod:
             NashP.append(i)
@@ -43,6 +44,7 @@ def suitable_dpst():
     for f in range(0, len(Nash)):
         if Nash[f] == wnted_percent:
             depos_name = f + 1
+    return depos_name
 
 
 match depos_name:
@@ -81,19 +83,22 @@ match depos_name:
         print(ru.DISPARITY)
 
 
-def deposit_sum(cash, percnt, time):
+def deposit_sum(cash, prcnt, time):
     '''
     :param cash:
-    :param percnt:
+    :param prcnt:
     :param time:
 
     '''
     for i in range(time):
-        sum_of_priod.append(cash * (percnt / 100))
-        cash += cash * (percnt / 100)
+        sum_of_priod.append(cash * (prcnt / 100))
+        cash += cash * (prcnt / 100)
     print(ru.CASH, cash)
     print(ru.SUMM_OF_PRD, sum_of_priod)
 
 
 def main():
 
+
+if __name__ == '__main__':
+    main()
