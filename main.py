@@ -4,7 +4,6 @@ wnted_priod = int(input(ru.CHOICE_PRD))
 wnted_percent = float(input(ru.CHOICE_PRCNT))
 begin_sum = float(input(ru.CHOICE_DPST))
 
-
 sum_of_priod = []
 NashP = []
 Nash = []
@@ -22,19 +21,19 @@ def check_exists_percent(wnted_percent):
     return wnted_percent != 0
 
 
-for i in range(0, 10):
-    if period[i] == wnted_priod:
-        NashP.append(i)
-        print(i, NashP)
+def suitable_dpst():
+    for i in range(0, 10):
+        if period[i] == wnted_priod:
+            NashP.append(i)
+            print(i, NashP)
 
-for k in NashP:
-    print(percent[k])
-    Nash.append(percent[k])
+    for k in NashP:
+        print(percent[k])
+        Nash.append(percent[k])
 
-for f in range(0, len(Nash)):
-    if Nash[f] == wnted_percent:
-        depos_name = f + 1
-
+    for f in range(0, len(Nash)):
+        if Nash[f] == wnted_percent:
+            depos_name = f + 1
 
 
 match depos_name:
@@ -68,6 +67,9 @@ match depos_name:
     case 9:
         description = ru.LEVOBEREZHNY_36
         print(ru.LEVOBEREZHNY_36)
+    case _:
+        description = ru.DISPARITY
+        print(ru.DISPARITY)
 
 
 def deposit_sum(cash, percnt, time):
@@ -78,4 +80,5 @@ def deposit_sum(cash, percnt, time):
     print(ru.SUMM_OF_PRD, sum_of_priod)
 
 
+def main():
 
