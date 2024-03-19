@@ -93,16 +93,16 @@ def deposit_sum(cash, percnt, time):
     for i in range(time):
         sum_of_priod.append(cash * (percnt / 100))
         cash += cash * (percnt / 100)
-   # print(ru.CASH, cash)
-   # print(ru.SUMM_OF_PRD, sum_of_priod)
-    return cash
+    print(ru.CASH, cash)
+    print(ru.SUMM_OF_PRD, sum_of_priod)
+
 
 def main():
     if check_exists_period(wnted_priod) == True and check_exists_percent(wnted_percent) == True:
         print(description)
         print(ru.BEGIN_SUM, begin_sum)
-        print(ru.CASH, cash)
-        print(ru.SUMM_OF_PRD, sum_of_priod)
+        deposit_sum(cash, )
+
 
 
 if __name__ == '__main__':
