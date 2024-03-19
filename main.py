@@ -5,38 +5,37 @@ wnted_prcnt = float(input(ru.CHOICE_PRCNT))
 begin_sum = float(input(ru.CHOICE_DPST))
 
 sum_of_prd = []
-NashP = []
-Nash = []
+nashP = []
+nash = []
 new = []
 
 percent = [15, 13.5, 11.5, 14, 16, 14.09, 13.8, 16, 12.5, 11.5]
 period = [3, 12, 24, 12, 6, 12, 24, 36, 12, 36]
 
 
-def check_exists(wnted_prd, wnted_prcnt):
+def check_exists(wnted_prd, wnted_prcnt, begin_sum):
     '''
     This function checks whether it is possible to make a deposit according to the entered conditions
     '''
-    return wnted_prd != 0 and wnted_prd >= 1 and wnted_prcnt != 0
+    return wnted_prd != 0 and wnted_prd >= 1 and wnted_prcnt != 0 and begin_sum != 0
 
 
-def suitable_dpst():
+def suitable_dpst(wnted_prd, wnted_prcnt):
     '''
     This function finds the most suitable contribution based on the entered values
     '''
-
     global depos_name
     for i in range(0, 10):
         if period[i] == wnted_prd:
-            NashP.append(i)
-            print(i, NashP)
+            nashP.append(i)
+            print(i, nashP)
 
-    for k in NashP:
+    for k in nashP:
         print(percent[k])
-        Nash.append(percent[k])
+        nash.append(percent[k])
 
-    for f in range(0, len(Nash)):
-        if Nash[f] == wnted_prcnt:
+    for f in range(0, len(nash)):
+        if nash[f] == wnted_prcnt:
             depos_name = f + 1
 
     return depos_name
@@ -81,10 +80,10 @@ def deposit_sum(cash, prcnt, time):
 
 
 def main():
-    if check_exists(wnted_prd, wnted_prcnt):
+    if check_exists(wnted_prd, wnted_prcnt, begin_sum):
         suitable_dpst()
-        deposits_descr(depos_name)
-        deposit_sum(cash, prcnt, time)
+        deposits_descr()
+        deposit_sum()
     else:
         print(ru.DISPARITY)
 
