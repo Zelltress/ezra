@@ -62,7 +62,6 @@ def check_exists_period(period, wnted_priod):   #первичный вариан
     except:
         return False
 
-
 def check_exists_percent(percent, wnted_percent):
     try:
         percent.index(wnted_percent)
