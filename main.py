@@ -1,5 +1,5 @@
 import ru_local as ru
-wnted_priod = int(input('Введите количество месяцев, на котоорые вы хотите взять кредит: '))
+wnted_priod = int(input('Введите количество месяцев, на котоорые вы хотите взять вклад: '))
 wnted_percent = float(input('Введите желаемый процент: '))
 begin_sum = float(input('Введите начальную сумму вклада: '))
 
@@ -52,20 +52,12 @@ match depos_name:
         print(ru.LEVOBEREZHNY_36)
 
 
-#логическая функция на проверку соответствя
-def check_exists_period(period, wnted_priod):   #первичный вариант, найду полегче решение поменяю функцию
-    try:
-        period.index(wnted_priod)
-        return True
-    except:
-        return False
+def check_exists_period(wnted_priod):
+    return wnted_priod != 0 and wnted_priod >= 1
 
-def check_exists_percent(percent, wnted_percent):
-    try:
-        percent.index(wnted_percent)
-        return True
-    except:
-        return False
+def check_exists_percent(wnted_percent):
+    return wnted_percent != 0
+
 
 
 # Можно попробовать такой вариант, чтобы там были True, False
