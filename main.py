@@ -1,4 +1,5 @@
 import ru_local as ru
+
 wnted_priod = int(input('Введите количество месяцев, на котоорые вы хотите взять вклад: '))
 wnted_percent = float(input('Введите желаемый процент: '))
 begin_sum = float(input('Введите начальную сумму вклада: '))
@@ -12,11 +13,12 @@ sum_of_priod = []
 def deposit_sum(cash, percnt, time):
     for i in range(time):
         sum_of_priod.append(cash * (percnt / 100))
-        cash += cash*(percnt/100)
+        cash += cash * (percnt / 100)
     print('Сумма =', cash)
     print('Суммы в каждый месяц:', sum_of_priod)
 
-#допустим, что depos_name - подходящий нам вклад
+
+# допустим, что depos_name - подходящий нам вклад
 depos_name = 1
 
 match depos_name:
@@ -55,20 +57,23 @@ match depos_name:
 def check_exists_period(wnted_priod):
     return wnted_priod != 0 and wnted_priod >= 1
 
+
 def check_exists_percent(wnted_percent):
     return wnted_percent != 0
 
 
 
+'''
 # Можно попробовать такой вариант, чтобы там были True, False
 values = []
+
 def option_existence():
     for i in range(len(percent)):
         values.append(period[i] == wnted_priod and percent[i] == wnted_percent)
     return sum(values)
 
 
-'''
+
 if depos_name == '11.5% на 24мес - Тинькофф':
     deposit_sum(begin_sum, percent[0], period[0])
 elif depos_name == '13.5% на 12мес - Тинькофф':
