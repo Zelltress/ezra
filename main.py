@@ -71,6 +71,14 @@ def check_exists_percent(percent, wnted_percent):
         return False
 
 
+# Можно попробовать такой вариант, чтобы там были True, False
+values = []
+def option_existence():
+    for i in range(len(percent)):
+        values.append(period[i] == wnted_priod and percent[i] == wnted_percent)
+    return sum(values)
+
+
 '''
 if depos_name == '11.5% на 24мес - Тинькофф':
     deposit_sum(begin_sum, percent[0], period[0])
