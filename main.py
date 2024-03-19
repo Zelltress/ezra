@@ -29,9 +29,8 @@ def check_exists_percent(wnted_percent):
 
 def suitable_dpst():
     '''
-    This function selects the most suitable contribution
+
     '''
-    global depos_name
     for i in range(0, 10):
         if period[i] == wnted_priod:
             NashP.append(i)
@@ -43,7 +42,8 @@ def suitable_dpst():
 
     for f in range(0, len(Nash)):
         if Nash[f] == wnted_percent:
-            depos_name = f + 1
+           global depos_name = f + 1
+
     return depos_name
 
 
@@ -83,19 +83,28 @@ match depos_name:
         print(ru.DISPARITY)
 
 
-def deposit_sum(cash, prcnt, time):
+def deposit_sum(cash, percnt, time):
     '''
-    This function calculates the deposit amount at the end of the term and accruals for each month
+    :param cash:
+    :param percnt:
+    :param time:
+
     '''
     for i in range(time):
-        sum_of_priod.append(cash * (prcnt / 100))
-        cash += cash * (prcnt / 100)
-    print(ru.CASH, cash)
-    print(ru.SUMM_OF_PRD, sum_of_priod)
-
+        sum_of_priod.append(cash * (percnt / 100))
+        cash += cash * (percnt / 100)
+   # print(ru.CASH, cash)
+   # print(ru.SUMM_OF_PRD, sum_of_priod)
+    return cash
 
 def main():
+    if check_exists_period(wnted_priod) == True and check_exists_percent(wnted_percent) == True:
+        print(description)
+        print(ru.BEGIN_SUM, begin_sum)
+        print(ru.CASH, cash)
+        print(ru.SUMM_OF_PRD, sum_of_priod)
 
 
 if __name__ == '__main__':
-    main()
+        main()
+
