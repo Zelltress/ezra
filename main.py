@@ -43,6 +43,9 @@ def suitable_dpst():
 
 
 def deposits_descr(depos_name):
+    '''
+    In this function we display a description of the deposits
+    '''
     match depos_name:
         case 0:
             print(ru.TINKOFF_3)
