@@ -3,7 +3,7 @@ wnted_priod = int(input('Введите количество месяцев, н�
 wnted_percent = float(input('Введите желаемый процент: '))
 begin_sum = float(input('Введите начальную сумму вклада: '))
 
-percent = [11.5, 13.5, 14, 14.09, 13.8, 15, 11.5, 16, 16, 12.5]
+percent = [15, 13.5, 11.5, 14, 16, 14.09, 13.8, 16, 12.5, 11.5]
 period = [24, 12, 12, 6, 36, 3, 36, 6, 36, 12]
 
 sum_of_priod = []
@@ -22,34 +22,34 @@ def deposit_sum(cash, percnt, time):
 depos_name = 1
 
 match depos_name:
-    case 1:
+    case 0:
         description = ru.TINKOFF_3
         print(ru.TINKOFF_3)
-    case 2:
+    case 1:
         description = ru.TINKOFF_12
         print(ru.TINKOFF_12)
-    case 3:
+    case 2:
         description = ru.TINKOFF_24
         print(ru.TINKOFF_24)
-    case 4:
+    case 3:
         description = ru.SBERBANK_12
         print(ru.SBERBANK_12)
-    case 5:
+    case 4:
         description = ru.VTB_6
         print(ru.VTB_6)
-    case 6:
+    case 5:
         description = ru.VTB_12
         print(ru.VTB_12)
-    case 7:
+    case 6:
         description = ru.ALFABANK_24
         print(ru.ALFABANK_24)
-    case 8:
+    case 7:
         description = ru.ALFABANK_36
         print(ru.ALFABANK_36)
-    case 9:
+    case 8:
         description = ru.LEVOBEREZHNY_12
         print(ru.LEVOBEREZHNY_12)
-    case 10:
+    case 9:
         description = ru.LEVOBEREZHNY_36
         print(ru.LEVOBEREZHNY_36)
 
