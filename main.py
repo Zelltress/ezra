@@ -1,3 +1,4 @@
+import ru_local as ru
 wnted_priod = int(input('Введите количество месяцев, на котоорые вы хотите взять кредит: '))
 wnted_percent = float(input('Введите желаемый процент: '))
 begin_sum = float(input('Введите начальную сумму вклада: '))
@@ -14,6 +15,41 @@ def deposit_sum(cash, percnt, time):
         cash += cash*(percnt/100)
     print('Сумма =', cash)
     print('Суммы в каждый месяц:', sum_of_priod)
+
+#допустим, что depos_name - подходящий нам вклад
+depos_name = 1
+
+match depos_name:
+    case 1:
+        description = ru.TINKOFF_24
+        print(ru.TINKOFF_24)
+    case 2:
+        description = ru.TINKOFF_12
+        print(ru.TINKOFF_12)
+    case 3:
+        description = ru.SBERBANK_12
+        print(ru.SBERBANK_12)
+    case 4:
+        description= '14.09% на 6мес - ВТБ'
+        print('14.09% на 6мес - ВТБ')
+    case 5:
+        description = '14.75% на 36мес - АльфаБанк'
+        print('14.75% на 36мес - АльфаБанк')
+    case 6:
+        description = '15% на 3мес- Тинькофф'
+        print('15% на 3мес- Тинькофф')
+    case 7:
+        description = '15.25% на 36мес - БанкЛевобережный'
+        print('15.25% на 36мес - БанкЛевобережный')
+    case 8:
+        description = '16% на 6мес - ВТБ'
+        print('16% на 6мес - ВТБ')
+    case 9:
+        description = '16% на 36мес - АльфаБанк'
+        print('16% на 36мес - АльфаБанк')
+    case 10:
+        description = '17% на 12мес - БанкЛевобережный'
+        print('17% на 12мес - БанкЛевобережный')
 
 
 if depos_name == '11.5% на 24мес - Тинькофф':
