@@ -17,6 +17,8 @@ def deposit_sum(cash, percnt, time):
     print('Суммы в каждый месяц:', sum_of_priod)
 
 #допустим, что depos_name - подходящий нам вклад
+
+
 depos_name = 1
 
 match depos_name:
@@ -53,12 +55,13 @@ match depos_name:
 
 
 #логическая функция на проверку соответствя
-def check_exists_period(period, wnted_priod): #первичный вариант, найду полегче решение поменяю функцию
+def check_exists_period(period, wnted_priod):   #первичный вариант, найду полегче решение поменяю функцию
     try:
         period.index(wnted_priod)
         return True
     except:
         return False
+
 
 def check_exists_percent(percent, wnted_percent):
     try:
@@ -66,7 +69,6 @@ def check_exists_percent(percent, wnted_percent):
         return True
     except:
         return False
-
 
 
 '''
@@ -91,3 +93,4 @@ elif depos_name == '16% на 36мес - АльфаБанк':
 else:
     deposit_sum(begin_sum, percent[9], period[9])
 '''
+deposit_sum(begin_sum, percent[depos_name], period[depos_name])
