@@ -52,7 +52,24 @@ match depos_name:
         print(ru.LEVOBEREZHNY_36)
 
 
+#логическая функция на проверку соответствя
+def check_exists_period(period, wnted_priod): #первичный вариант, найду полегче решение поменяю функцию
+    try:
+        period.index(wnted_priod)
+        return True
+    except:
+        return False
 
+def check_exists_percent(percent, wnted_percent):
+    try:
+        percent.index(wnted_percent)
+        return True
+    except:
+        return False
+
+
+
+'''
 if depos_name == '11.5% на 24мес - Тинькофф':
     deposit_sum(begin_sum, percent[0], period[0])
 elif depos_name == '13.5% на 12мес - Тинькофф':
@@ -73,3 +90,4 @@ elif depos_name == '16% на 36мес - АльфаБанк':
     deposit_sum(begin_sum, percent[8], period[8])
 else:
     deposit_sum(begin_sum, percent[9], period[9])
+'''
