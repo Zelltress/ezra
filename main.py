@@ -29,7 +29,7 @@ def check_exists_percent(wnted_percent):
 
 def suitable_dpst():
     '''
-
+    This function selects the most suitable contribution
     '''
     global depos_name
     for i in range(0, 10):
@@ -85,10 +85,7 @@ match depos_name:
 
 def deposit_sum(cash, prcnt, time):
     '''
-    :param cash:
-    :param prcnt:
-    :param time:
-
+    This function calculates the deposit amount at the end of the term and accruals for each month
     '''
     for i in range(time):
         sum_of_priod.append(cash * (prcnt / 100))
