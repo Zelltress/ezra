@@ -7,7 +7,7 @@ begin_sum = float(input(ru.CHOICE_DPST))
 sum_of_prd = []
 required_prd = []
 required_prcnt = []
-new = []
+
 
 percent = [15, 13.5, 11.5, 14, 16, 14.09, 13.8, 16, 12.5, 11.5]
 period = [3, 12, 24, 12, 6, 12, 24, 36, 12, 36]
