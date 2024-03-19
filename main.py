@@ -21,35 +21,36 @@ depos_name = 1
 
 match depos_name:
     case 1:
-        description = ru.TINKOFF_24
-        print(ru.TINKOFF_24)
+        description = ru.TINKOFF_3
+        print(ru.TINKOFF_3)
     case 2:
         description = ru.TINKOFF_12
         print(ru.TINKOFF_12)
     case 3:
+        description = ru.TINKOFF_24
+        print(ru.TINKOFF_24)
+    case 4:
         description = ru.SBERBANK_12
         print(ru.SBERBANK_12)
-    case 4:
-        description= '14.09% на 6мес - ВТБ'
-        print('14.09% на 6мес - ВТБ')
     case 5:
-        description = '14.75% на 36мес - АльфаБанк'
-        print('14.75% на 36мес - АльфаБанк')
+        description = ru.VTB_6
+        print(ru.VTB_6)
     case 6:
-        description = '15% на 3мес- Тинькофф'
-        print('15% на 3мес- Тинькофф')
+        description = ru.VTB_12
+        print(ru.VTB_12)
     case 7:
-        description = '15.25% на 36мес - БанкЛевобережный'
-        print('15.25% на 36мес - БанкЛевобережный')
+        description = ru.ALFABANK_24
+        print(ru.ALFABANK_24)
     case 8:
-        description = '16% на 6мес - ВТБ'
-        print('16% на 6мес - ВТБ')
+        description = ru.ALFABANK_36
+        print(ru.ALFABANK_36)
     case 9:
-        description = '16% на 36мес - АльфаБанк'
-        print('16% на 36мес - АльфаБанк')
+        description = ru.LEVOBEREZHNY_12
+        print(ru.LEVOBEREZHNY_12)
     case 10:
-        description = '17% на 12мес - БанкЛевобережный'
-        print('17% на 12мес - БанкЛевобережный')
+        description = ru.LEVOBEREZHNY_36
+        print(ru.LEVOBEREZHNY_36)
+
 
 
 if depos_name == '11.5% на 24мес - Тинькофф':
