@@ -51,8 +51,6 @@ def suitable_dpst(wnted_prd, wnted_prcnt, depos_name):
                 variant.append(required_prd[number])
 
     
-    return answer
-    
 
 
 def deposits_descr(depos_name):
