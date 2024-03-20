@@ -31,30 +31,27 @@ def suitable_dpst(wnted_prd, wnted_prcnt, depos_name):
     This function finds the most suitable contribution based on the entered values
     '''
     for i in range(0, 10):
-        if period[i] == wnted_prd:
-            required_prd .append(i)
-            print(i, required_prd)
+    if period[i] == wnted_prd:
+    required_prd.append(i)
 
     for k in required_prd:
-        print(percent[k])
         required_prcnt.append(percent[k])
 
     for f in range(0, len(required_prcnt)):
         if required_prcnt[f] == wnted_prcnt:
-            answer = f + 1
-            variant.append(answer)
-            final.append(answer)
-    
+            variant.append(required_prd[f])
+            final.append(f)
+
     if len(final) == 0:
         for a in required_prcnt:
             a = a - wnted_prcnt
-            print(a)
             new.append(math.fabs(a))
         for number in range(0, len(required_prcnt)):
             if new[number] == min(new):
-                variant.append(required_prd[number]+1)
+                variant.append(required_prd[number])
+
     
-        return answer
+    return answer
     
 
 
@@ -63,7 +60,7 @@ def deposits_descr(depos_name):
     In this function we display a description of the deposits
     '''
     for depos_name in variant:
-        print("Возможные варианты")
+        print("варианты")
         match depos_name:
             case 0:
                 print(ru.TINKOFF_3)
