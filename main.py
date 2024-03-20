@@ -55,8 +55,8 @@ def deposits_descr():
     '''
     In this function we display a description of the deposits
     '''
+    print(ru.ANSWER)
     for depos_name in variant:
-        print(ru.ANSWER)
         match depos_name:
             case 0:
                 print(ru.TINKOFF_3)
