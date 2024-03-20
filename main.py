@@ -26,7 +26,6 @@ def check_exists():
     return wnted_prcnt > 0 and begin_sum > 0 and wnted_prd in period
 
 
-
 def suitable_dpst():
     '''
     This function finds the most suitable contribution based on the entered values
