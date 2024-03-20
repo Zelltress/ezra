@@ -1,3 +1,6 @@
+# Part of case-study #4
+# Developers: Ivanova A., Gulakova Y., Ilinykh T., Cherkashina D.
+
 import ru_local as ru
 import math
 
