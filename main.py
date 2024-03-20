@@ -1,5 +1,5 @@
 import ru_local as ru
-import math as math
+import math
 
 wnted_prd = int(input(ru.CHOICE_PRD))
 wnted_prcnt = float(input(ru.CHOICE_PRCNT))
@@ -19,14 +19,14 @@ period = [3, 12, 24, 12, 6, 12, 24, 36, 12, 36]
 depos_name = 0
 
 
-def check_exists(wnted_prd, wnted_prcnt, begin_sum):
+def check_exists():
     '''
     This function checks whether it is possible to make a deposit according to the entered conditions
     '''
     return wnted_prd != 0 and wnted_prd >= 1 and wnted_prcnt != 0 and begin_sum != 0
 
 
-def suitable_dpst(wnted_prd, wnted_prcnt, depos_name):
+def suitable_dpst():
     '''
     This function finds the most suitable contribution based on the entered values
     '''
@@ -57,13 +57,12 @@ def suitable_dpst(wnted_prd, wnted_prcnt, depos_name):
         return answer
     
 
-
-def deposits_descr(depos_name):
+def deposits_descr():
     '''
     In this function we display a description of the deposits
     '''
     for depos_name in variant:
-        print("Возможные варианты")
+        print(ru.VARIANTS)
         match depos_name:
             case 0:
                 print(ru.TINKOFF_3)
@@ -99,9 +98,9 @@ def deposit_sum(cash, prcnt, time):
 
 
 def main():
-    if check_exists(wnted_prd, wnted_prcnt, begin_sum):
-        suitable_dpst(wnted_prd, wnted_prcnt, depos_name)
-        deposits_descr(depos_name)
+    if check_exists():
+        suitable_dpst()
+        deposits_descr()
         deposit_sum(begin_sum, percent[depos_name], period[depos_name])
     else:
         print(ru.DISPARITY)
