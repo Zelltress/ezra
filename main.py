@@ -45,16 +45,17 @@ def suitable_dpst(wnted_prd, wnted_prcnt, depos_name):
             variant.append(answer)
             final.append(answer)
     
-if len(final) == 0:
-    for a in required_prcnt:
-        a = a - wnted_percent
-        print(a)
-        new.append(math.fabs(a))
-    for number in range(0, len(required_prcnt)):
-        if new[number] == min(new):
-            variant.append(required_prd[number]+1)
-
-    return answer
+    if len(final) == 0:
+        for a in required_prcnt:
+            a = a - wnted_prcnt
+            print(a)
+            new.append(math.fabs(a))
+        for number in range(0, len(required_prcnt)):
+            if new[number] == min(new):
+                variant.append(required_prd[number]+1)
+    
+        return answer
+    
 
 
 def deposits_descr(depos_name):
