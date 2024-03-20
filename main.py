@@ -1,4 +1,5 @@
 import ru_local as ru
+import math as math
 
 wnted_prd = int(input(ru.CHOICE_PRD))
 wnted_prcnt = float(input(ru.CHOICE_PRCNT))
