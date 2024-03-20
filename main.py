@@ -1,5 +1,5 @@
 import ru_local as ru
-import math
+import math as math
 
 wnted_prd = int(input(ru.CHOICE_PRD))
 wnted_prcnt = float(input(ru.CHOICE_PRCNT))
@@ -19,50 +19,46 @@ period = [3, 12, 24, 12, 6, 12, 24, 36, 12, 36]
 depos_name = 0
 
 
-def check_exists():
+def check_exists(wnted_prd, wnted_prcnt, begin_sum):
     '''
     This function checks whether it is possible to make a deposit according to the entered conditions
     '''
     return wnted_prd != 0 and wnted_prd >= 1 and wnted_prcnt != 0 and begin_sum != 0
 
 
-def suitable_dpst():
+def suitable_dpst(wnted_prd, wnted_prcnt, depos_name):
     '''
     This function finds the most suitable contribution based on the entered values
     '''
     for i in range(0, 10):
-        if period[i] == wnted_prd:
-            required_prd .append(i)
-            print(i, required_prd)
+    if period[i] == wnted_prd:
+    required_prd.append(i)
 
     for k in required_prd:
-        print(percent[k])
         required_prcnt.append(percent[k])
 
     for f in range(0, len(required_prcnt)):
         if required_prcnt[f] == wnted_prcnt:
-            answer = f + 1
-            variant.append(answer)
-            final.append(answer)
-    
+            variant.append(required_prd[f])
+            final.append(f)
+
     if len(final) == 0:
         for a in required_prcnt:
             a = a - wnted_prcnt
-            print(a)
             new.append(math.fabs(a))
         for number in range(0, len(required_prcnt)):
             if new[number] == min(new):
-                variant.append(required_prd[number]+1)
-    
-        return answer
+                variant.append(required_prd[number])
+
     
 
-def deposits_descr():
+
+def deposits_descr(depos_name):
     '''
     In this function we display a description of the deposits
     '''
     for depos_name in variant:
-        print(ru.VARIANTS)
+        print(ru.ANSWER)
         match depos_name:
             case 0:
                 print(ru.TINKOFF_3)
@@ -98,9 +94,9 @@ def deposit_sum(cash, prcnt, time):
 
 
 def main():
-    if check_exists():
-        suitable_dpst()
-        deposits_descr()
+    if check_exists(wnted_prd, wnted_prcnt, begin_sum):
+        suitable_dpst(wnted_prd, wnted_prcnt, depos_name)
+        deposits_descr(depos_name)
         deposit_sum(begin_sum, percent[depos_name], period[depos_name])
     else:
         print(ru.DISPARITY)
