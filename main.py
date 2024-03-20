@@ -95,7 +95,8 @@ def main():
     if check_exists():
         suitable_dpst()
         deposits_descr()
-        deposit_sum(begin_sum, percent[depos_name], period[depos_name])
+        for depos_name in variant:
+            deposit_sum(begin_sum, percent[depos_name], period[depos_name])
     else:
         print(ru.DISPARITY)
 
