@@ -23,9 +23,8 @@ def check_exists():
     '''
     This function checks whether it is possible to make a deposit according to the entered conditions
     '''
-    return wnted_prd != 0 and wnted_prd >= 1 and wnted_prcnt != 0 and begin_sum != 0 and (
-        wnted_prcnt in percent and wnted_prd in period
-    )
+    return wnted_prcnt > 0 and begin_sum > 0 and wnted_prd in period
+
 
 
 def suitable_dpst():
