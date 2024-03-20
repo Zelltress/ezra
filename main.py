@@ -7,6 +7,9 @@ begin_sum = float(input(ru.CHOICE_DPST))
 sum_of_prd = []
 required_prd = []
 required_prcnt = []
+new = []
+final = []
+variant = []
 
 
 percent = [15, 13.5, 11.5, 14, 16, 14.09, 13.8, 16, 12.5, 11.5]
@@ -37,36 +40,49 @@ def suitable_dpst(wnted_prd, wnted_prcnt, depos_name):
 
     for f in range(0, len(required_prcnt)):
         if required_prcnt[f] == wnted_prcnt:
-            depos_name = f + 1
+            answer = f + 1
+            variant.append(answer)
+            final.append(answer)
+    
+if len(final) == 0:
+    for a in required_prcnt:
+        a = a - wnted_percent
+        print(a)
+        new.append(math.fabs(a))
+    for number in range(0, len(required_prcnt)):
+        if new[number] == min(new):
+            variant.append(required_prd[number]+1)
 
-    return depos_name
+    return answer
 
 
 def deposits_descr(depos_name):
     '''
     In this function we display a description of the deposits
     '''
-    match depos_name:
-        case 0:
-            print(ru.TINKOFF_3)
-        case 1:
-            print(ru.TINKOFF_12)
-        case 2:
-            print(ru.TINKOFF_24)
-        case 3:
-            print(ru.SBERBANK_12)
-        case 4:
-            print(ru.VTB_6)
-        case 5:
-            print(ru.VTB_12)
-        case 6:
-            print(ru.ALFABANK_24)
-        case 7:
-            print(ru.ALFABANK_36)
-        case 8:
-            print(ru.LEVOBEREZHNY_12)
-        case 9:
-            print(ru.LEVOBEREZHNY_36)
+    for depos_name in variant:
+        print("Возможные варианты")
+        match depos_name:
+            case 0:
+                print(ru.TINKOFF_3)
+            case 1:
+                print(ru.TINKOFF_12)
+            case 2:
+                print(ru.TINKOFF_24)
+            case 3:
+                print(ru.SBERBANK_12)
+            case 4:
+                print(ru.VTB_6)
+            case 5:
+                print(ru.VTB_12)
+            case 6:
+                print(ru.ALFABANK_24)
+            case 7:
+                print(ru.ALFABANK_36)
+            case 8:
+                print(ru.LEVOBEREZHNY_12)
+            case 9:
+                print(ru.LEVOBEREZHNY_36)
 
 
 def deposit_sum(cash, prcnt, time):
